@@ -17,7 +17,8 @@ module.exports = {
     chunks: true
   },
   devServer: {
-    publicPath: '/public/'
+    publicPath: '/public/',
+    historyApiFallback: true
   },
   module: {
     rules: [
