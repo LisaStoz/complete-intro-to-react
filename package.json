@@ -1,6 +1,8 @@
 {
   "scripts": {
     "api": "node ratingsAPI.js",
+    "build": "webpack",
+    "watch": "webpack --watch",
     "format": "prettier --list-different --single-quote --print-width=120 \"js/**/*.{js,jsx}\"",
     "lint": "./node_modules/.bin/eslint **/*.{js,jsx} --quiet"
   },
