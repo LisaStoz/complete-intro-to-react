@@ -16,6 +16,9 @@ module.exports = {
     reasons: true,
     chunks: true
   },
+  devServer: {
+    publicPath: '/public/'
+  },
   module: {
     rules: [
       {
