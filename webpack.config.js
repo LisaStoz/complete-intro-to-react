@@ -15,5 +15,13 @@ module.exports = {
     colors: true,
     reasons: true,
     chunks: true
+  },
+  module: {
+    rules: [
+      {
+        test: /\.jsx?$/,
+        loader: 'babel-loader'
+      }
+    ]
   }
 };
