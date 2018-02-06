@@ -1,4 +1,5 @@
 import React from 'react';
+import { shape, string } from 'prop-types';
 
 const ShowCard = props => (
   <div className="show-card">
@@ -7,8 +8,21 @@ const ShowCard = props => (
       <h3>{props.show.title}</h3>
       <h4>({props.show.year})</h4>
       <p>{props.show.description}</p>
+      <p>{props.foo}</p>
     </div>
   </div>
 );
+
+ShowCard.defaultProps = {
+  foo: 'stuff'
+};
+ShowCard.propTypes = {
+  show: shape({
+    poster: string.isRequired,
+    title: string.isRequired,
+    year: string.isRequired,
+    description: string.isRequired
+  }).isRequired
+};
 
 export default ShowCard;
