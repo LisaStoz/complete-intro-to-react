@@ -4,18 +4,10 @@ import preload from '../data.json';
 
 class Search extends Component {
 
-	constructor (props) {
-		super(props)
-
-		this.state = {
-			searchTerm: 'debug statement'
-		}
-
-		this.handleSearchTermChange = this.handleSearchTermChange.bind(this)
-
+	state = {
+		searchTerm: 'debug statement'
 	}
-
-	handleSearchTermChange (event) {
+	handleSearchTermChange = (event) => {
 		this.setState({searchTerm: event.target.value});
 	}
 
