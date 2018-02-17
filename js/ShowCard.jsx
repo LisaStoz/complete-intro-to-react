@@ -22,7 +22,8 @@ ShowCard.propTypes = {
     title: string.isRequired,
     year: string.isRequired,
     description: string.isRequired
-  }).isRequired
+  }).isRequired,
+  foo: string.isRequired
 };
 
 export default ShowCard;
