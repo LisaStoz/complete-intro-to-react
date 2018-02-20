@@ -5,7 +5,7 @@ import preload from '../data.json';
 class Search extends Component {
 
 	state = {
-		searchTerm: 'debug statement'
+		searchTerm: ''
 	}
 	handleSearchTermChange = (event) => {
 		this.setState({searchTerm: event.target.value});
@@ -16,11 +16,14 @@ class Search extends Component {
 
 		<div className="search">
 			<header>
-				<h1>svideo</h1>
+				<h1>{this.state.searchTerm}</h1>
 				<input type="text" onChange={this.handleSearchTermChange} value={this.state.searchTerm} placeholder="search" />
 			</header>
 			<div>
-	    	{preload.shows.map(show => <ShowCard key={show.imdbID} {...show} />)}
+	    	{preload
+					.shows
+					.filter(show => `${show.title} ${show.description}`.toUpperCase().indexOf(this.state.searchTerm.toUpperCase()) >= 0)
+					.map(show => <ShowCard key={show.imdbID} {...show} />)}
 			</div>
 	  </div>
 
